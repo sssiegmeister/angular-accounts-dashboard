@@ -5,6 +5,7 @@ import { Observable, of } from 'rxjs';
 import { ACCOUNTS } from './mock-accounts';
 import { HeaderService } from './header.service';
 import { Account } from './account';
+import { LoadService } from './load.service';
 
 @Injectable({
   providedIn: 'root'
@@ -25,7 +26,7 @@ export class AccountsService {
       return 0;
   }
 
-  constructor(private headerService: HeaderService) { }
+  constructor(private headerService: HeaderService, private loadService: LoadService) { }
 
   updateAccounts(): void {
     console.log(this.accounts, this.headerService.sortBy);
