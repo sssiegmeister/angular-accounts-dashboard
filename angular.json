@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "angular-cvs-challenge"
+    }
+  },
+  "defaultProject": "angular-cvs-challenge",
+  "cli": {
+    "analytics": "2fa4e0eb-74e9-4851-a1de-6cf34ffdf32f"
+  }
 }

@@ -1,0 +1,25 @@
+
+.card {
+  padding: 0 0 1em 0;
+  border-bottom: 1px solid black;
+  width: 100%;
+  display: flex;
+}
+
+.active {
+  background-color: #D3D3D3;
+}
+
+.left {
+  text-align: left;
+  flex-direction: row;
+}
+
+.right {
+  text-align: right;
+  flex-direction: row-reverse;
+}
+
+.hideArrow {
+  visibility: hidden;
+}

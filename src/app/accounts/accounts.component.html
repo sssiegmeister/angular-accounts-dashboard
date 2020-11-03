@@ -1,0 +1,13 @@
+<div class= "background">
+  <div class="foreground">
+    <div class="container">
+      <header class="wrapper" direction="left" label="Account" key="num"></header>
+      <header class="wrapper" direction="right" label="Balance" key="balance"></header>
+    </div>
+    <ul class="accts">
+      <li *ngFor="let account of accounts">
+        <account-detail class="wrapper" [account]="account"></account-detail>
+      </li>
+    </ul>
+  </div>
+</div>
