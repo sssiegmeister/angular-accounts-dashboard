@@ -10,6 +10,14 @@
   background-color: #D3D3D3;
 }
 
+.active span {
+  visibility: visible;
+}
+
+span {
+  visibility: hidden;
+}
+
 .left {
   text-align: left;
   flex-direction: row;
@@ -18,8 +26,4 @@
 .right {
   text-align: right;
   flex-direction: row-reverse;
-}
-
-.hideArrow {
-  visibility: hidden;
 }

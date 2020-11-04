@@ -5,10 +5,19 @@
       <header class="wrapper" direction="right" label="Balance" key="balance"></header>
     </div>
     <ul class="accts">
-      <li *ngFor="let account of accounts">
-        <account-detail class="wrapper" [account]="account"></account-detail>
-      </li>
+      <div *ngIf="loadService.loaded">
+        <li *ngFor="let account of accounts">
+          <account-detail class="wrapper" [account]="account"></account-detail>
+        </li>
+      </div>
+      <div *ngIf="!loadService.loaded">
+        <li *ngFor="let account of accounts | slice:0:3;">
+          <account-detail class="wrapper" [account]="account"></account-detail>
+        </li>
+      </div>
     </ul>
-    <load-button></load-button>
+    <div [ngClass]="{hide: loadService.loaded}">
+      <load-button></load-button>
+    </div>
   </div>
 </div>

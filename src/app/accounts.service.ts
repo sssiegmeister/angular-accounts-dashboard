@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
 
-import { Observable, of } from 'rxjs';
-
 import { ACCOUNTS } from './mock-accounts';
 import { HeaderService } from './header.service';
 import { Account } from './account';
@@ -29,14 +27,13 @@ export class AccountsService {
   constructor(private headerService: HeaderService, private loadService: LoadService) { }
 
   updateAccounts(): void {
-    console.log(this.accounts, this.headerService.sortBy);
     this.accounts = this.accounts.sort(this.compare.bind(this));
   }
 
-  getAccounts(): Observable<Account[]> {
+  getAccounts(): Account[] {
 
     this.updateAccounts();
 
-    return of(this.accounts);
+    return this.accounts;
   }
 }

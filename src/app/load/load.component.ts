@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AccountsService } from '../accounts.service';
+import { LoadService } from '../load.service';
 
 @Component({
   selector: 'load-button',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoadComponent implements OnInit {
 
-  constructor() { }
+  onClick(): void {
+    this.loadService.loadAll();
+    this.accountsService.updateAccounts();
+  }
+
+  constructor(private loadService: LoadService, private accountsService: AccountsService) { }
 
   ngOnInit(): void {
+    
   }
 
 }

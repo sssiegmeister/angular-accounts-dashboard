@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Account } from '../account';
 import { AccountsService } from '../accounts.service';
-import { HeaderService } from '../header.service';
+import { LoadService } from '../load.service';
 
 
 @Component({
@@ -13,25 +13,13 @@ import { HeaderService } from '../header.service';
 export class AccountsComponent implements OnInit {
   accounts: Account[];
 
-  sortBy: string;
-  ascending: boolean;
-
-  getSortDetails(): void {
-    this.headerService.getSortBy()
-        .subscribe(sortBy => this.sortBy = sortBy);
-    this.headerService.getAscending()
-        .subscribe(ascending => this.ascending = ascending)
-  }
-
   getAccounts(): void {
-    this.accountsService.getAccounts()
-        .subscribe(accounts => this.accounts = accounts);
+    this.accounts = this.accountsService.getAccounts();
   }
 
-  constructor(private headerService: HeaderService, private accountsService: AccountsService) { }
+  constructor(private accountsService: AccountsService, public loadService: LoadService) { }
 
   ngOnInit(): void {
-    this.getSortDetails();
     this.getAccounts();
   }
 

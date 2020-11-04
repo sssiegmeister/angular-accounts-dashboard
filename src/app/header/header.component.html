@@ -1,5 +1,5 @@
 
-  <div [class.active]="isActive()" [className]="direction + ' card'" (click)="onSelect()">
+  <div [ngClass]="{active: isActive()}" [className]="direction + ' card'" (click)="onSelect()">
     {{this.label + " "}} 
-    <span [class.hideArrow]="!isActive()">{{this.sortIndicator()}}</span>
+    <span>{{this.sortIndicator()}}</span>
   </div>
