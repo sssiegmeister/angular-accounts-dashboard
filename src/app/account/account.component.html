@@ -1,2 +1,7 @@
-<span class="badge left">{{account.type + " - " + account.num}}</span>
-<span class="badge right">{{account.balance}}</span>
+<span class="badge left">{{account.type + " - " + acctNum()}}</span>
+<div class="badge right">
+  <span>{{acctBal()}}</span>
+  <span [ngClass]="{'pos': modifier === '+', 'neg': modifier === '-', 'zero': modifier === ''}">
+    {{acctChangePercent() + " / " + acctChangeNum()}}
+  </span>
+</div>
