@@ -14,6 +14,8 @@ export class HeaderComponent implements OnInit {
 
   @Input() label: string;
 
+  @Input() subtext: string;
+
   @Input() key: string;
 
   onSelect(): void {

@@ -6,24 +6,35 @@
   display: flex;
 }
 
+.labels {
+  display: flex;
+  flex-direction: column;
+}
+
+.subtext {
+  color: gray;
+}
+
 .active {
   background-color: #D3D3D3;
 }
 
-.active span {
+.active p {
   visibility: visible;
 }
 
-span {
+p {
   visibility: hidden;
 }
 
 .left {
   text-align: left;
   flex-direction: row;
+  padding-left: 1em;
 }
 
 .right {
   text-align: right;
   flex-direction: row-reverse;
+  padding-right: 1em;
 }
